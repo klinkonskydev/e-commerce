@@ -1,7 +1,11 @@
+import styled from 'styled-components'
+
+const Heading = styled.h1``
+
 const Main = () => {
   return (
     <div>
-      <h1>Hello World!</h1>
+      <Heading>Hello World!</Heading>
     </div>
   )
 }

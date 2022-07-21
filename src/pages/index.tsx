@@ -1,11 +1,9 @@
-type Props = {
-  title: string
-}
+import Main from 'components/Main'
 
-export default function Home({ title = 'mat' }: Props) {
+export default function Home() {
   return (
     <div>
-      <h1>{title}</h1>
+      <Main />
     </div>
   )
 }
