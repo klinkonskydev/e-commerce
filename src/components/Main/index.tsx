@@ -1,11 +1,15 @@
-import styled from 'styled-components'
+import * as S from './styles'
 
-const Heading = styled.h1``
+type MainProps = {
+  title: string
+  description: string
+}
 
-const Main = () => {
+const Main = ({ title = 'Hello World!', description = 'Foo' }: MainProps) => {
   return (
     <div>
-      <Heading>Hello World!</Heading>
+      <S.Heading>{title}</S.Heading>
+      <S.Heading>{description}</S.Heading>
     </div>
   )
 }
