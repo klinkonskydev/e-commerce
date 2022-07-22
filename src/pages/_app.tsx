@@ -8,6 +8,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     <>
       <Head>
         <meta name="description" content="Melhor e-commerce do Brasil!" />
+        <link rel="manifest" href="/manifest.json" />
         <title>SkyCommerce</title>
       </Head>
       <GlobalStyles />

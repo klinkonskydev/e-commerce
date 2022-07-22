@@ -1,0 +1,24 @@
+{
+  "name": "Sky e-commerce",
+  "short_name": "Skycommerce",
+  "icons": [
+    {
+      "src": "/cloud-512x512.png",
+      "sizes": "100x100",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/cloud-128x128.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "theme_color": "#06092B",
+  "background_color": "#06092B",
+  "start_url": "/",
+  "display": "fullscreen",
+  "orientation": "portrait",
+  "description": "My simple e-commerce to learn about programing"
+}
