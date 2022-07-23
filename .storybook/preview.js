@@ -1,5 +1,8 @@
 import { ThemeProvider } from 'styled-components'
 
+import GlobalStyles from 'styles/GlobalStyles'
+import theme from 'styles/theme'
+
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
   controls: {
@@ -12,8 +15,9 @@ export const parameters = {
 
 export const decorators = [
   (Story) => (
-    <ThemeProvider theme={{}}>
+    <ThemeProvider theme={theme}>
       <Story />
+      <GlobalStyles hasBg={false} />
     </ThemeProvider>
   )
 ]

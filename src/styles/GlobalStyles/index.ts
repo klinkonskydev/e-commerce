@@ -1,39 +1,68 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle, css } from 'styled-components'
+import theme from 'styles/theme'
 
-export default createGlobalStyle`
-  body, body * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+type GlobalStyleProps = {
+  hasBg?: boolean
+}
 
-  @media (min-width: 768px) {
-    html {
-      font-size: 62.5%;
+export default createGlobalStyle<GlobalStyleProps>`
+  ${({ hasBg = true }) => css`
+    body,
+    body * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      font: normal 600 1.6rem/1.4 -apple-system, Roboto, sans-serif;
+      transition: font-size 120ms linear;
     }
-  }
 
-  @media (max-width: 768px) {
-    html {
-      font-size: 50.0%;
+    html,
+    body,
+    #__next {
+      width: 100%;
+      height: 100%;
     }
-  }
 
-  html, body, #__next {
-    width: 100%;
-    height: 100%;
-  }
+    button {
+      cursor: pointer;
+    }
 
-  body {
-    transition: font-size 120ms linear;
-    font-family: -apple-system, Roboto, sans-serif;
-    font-size: 1.6rem;
-    line-height: 1.4;
-  }
+    a {
+      text-decoration: none;
+    }
 
-  @media (prefers-reduced-motion) {
+    ul,
+    ol {
+      list-style: none;
+    }
+
+    @media (min-width: 768px) {
+      html {
+        font-size: 62.5%;
+      }
+    }
+
+    @media (max-width: 768px) {
+      html {
+        font-size: 50%;
+      }
+    }
+
+    @media (prefers-reduced-motion) {
+      body {
+        transition: all 0ms;
+      }
+    }
+
     body {
-      transition: all 0ms;
+      ${hasBg &&
+      css`
+        background: ${theme.colors.xwhite};
+      `}
+      color: ${theme.colors.black};
     }
-  }
+  `}
 `

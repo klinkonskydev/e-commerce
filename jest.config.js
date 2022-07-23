@@ -15,7 +15,7 @@ const customJestConfig = {
     '!src/types/*',
     '!src/styles/**/*'
   ],
-  moduleDirectories: ['node_modules', '<rootDir>/'],
+  moduleDirectories: ['node_modules', '<rootDir>/src'],
   testEnvironment: 'jest-environment-jsdom'
 }
 

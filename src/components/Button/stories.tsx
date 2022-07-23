@@ -1,12 +1,41 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react'
+import { Story, Meta } from '@storybook/react/types-6-0'
 
-import Button from '.'
+import Button, { ButtonProps } from '.'
 
 export default {
   title: 'Button',
-  component: Button
-} as ComponentMeta<typeof Button>
+  component: Button,
+  argTypes: {
+    children: {
+      type: 'string'
+    },
+    size: {
+      control: {
+        type: 'radio',
+        options: ['small', 'normal', 'big']
+      }
+    },
+    variant: {
+      control: {
+        type: 'radio',
+        options: ['transparent', 'contained', 'outlined']
+      }
+    }
+  },
+  args: {
+    children: 'Sign-in'
+  }
+} as Meta<ButtonProps>
 
-export const Default: ComponentStory<typeof Button> = (args) => (
-  <Button {...args} />
+export const Default: Story<ButtonProps> = (args) => <Button {...args} />
+
+export const ButtonLink: Story<ButtonProps> = (args) => (
+  <Button
+    {...args}
+    as="a"
+    href="https://www.linkedin.com/in/klinkonsky/"
+    target="_blank"
+  >
+    Go to my linkedin profile
+  </Button>
 )

@@ -1,13 +1,28 @@
+import { forwardRef } from 'react'
 import * as S from './styles'
 
-// type ButtonProps = {}
+type ButtonTypes =
+  | React.AnchorHTMLAttributes<HTMLAnchorElement>
+  | React.ButtonHTMLAttributes<HTMLButtonElement>
 
-const Button = () => {
+export type ButtonProps = {
+  children?: React.ReactNode
+  as?: React.ElementType
+  icon?: JSX.Element
+  size?: 'small' | 'normal' | 'big'
+  variant?: 'transparent' | 'contained' | 'outlined'
+} & ButtonTypes
+
+const Button: React.ForwardRefRenderFunction<S.WrapperProps, ButtonProps> = (
+  { children, size = 'normal', variant = 'contained', icon, ...props },
+  ref
+) => {
   return (
-    <div>
-      <S.Heading>Hello World!</S.Heading>
-    </div>
+    <S.Wrapper size={size} variant={variant} ref={ref} {...props}>
+      {icon}
+      {!!children && <span>{children}</span>}
+    </S.Wrapper>
   )
 }
 
-export default Button
+export default forwardRef(Button)
