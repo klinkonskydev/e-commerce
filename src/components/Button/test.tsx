@@ -34,7 +34,7 @@ describe('<Button />', () => {
     render(<Button variant="outlined">Sign-in</Button>)
 
     expect(screen.getByRole('button', { name: /sign-in/i })).toHaveStyle({
-      background: `${theme.colors.white}`,
+      background: 'transparent',
       border: `2px solid ${theme.colors.primary}`
     })
   })

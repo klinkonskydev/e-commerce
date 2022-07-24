@@ -23,7 +23,7 @@ export default {
     }
   },
   args: {
-    children: 'Sign-in'
+    children: 'Login'
   }
 } as Meta<ButtonProps>
 

@@ -12,13 +12,13 @@ const wrapperModifiers = {
     padding: ${theme.spacings.medium} ${theme.spacings.main};
   `,
   transparent: (theme: DefaultTheme) => css`
-    color: ${theme.colors.black};
+    color: ${theme.colors.primary};
     background: transparent;
 
     &:hover,
     &:focus {
       transform: scale(1);
-      outline: 1px dashed ${theme.colors.black};
+      outline: 1px dashed ${theme.colors.primary};
       outline-offset: 1px;
     }
   `,
@@ -27,8 +27,8 @@ const wrapperModifiers = {
     background: ${theme.colors.primary};
   `,
   outlined: (theme: DefaultTheme) => css`
-    color: ${theme.colors.black};
-    background: ${theme.colors.white};
+    color: ${theme.colors.primary};
+    background: transparent;
     border: 2px solid ${theme.colors.primary};
   `
 }
