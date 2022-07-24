@@ -1,3 +1,4 @@
+import { rgba } from 'polished'
 import { createGlobalStyle, css } from 'styled-components'
 import theme from 'styles/theme'
 
@@ -37,6 +38,13 @@ export default createGlobalStyle<GlobalStyleProps>`
     ul,
     ol {
       list-style: none;
+    }
+
+    a {
+      &:focus {
+        border: 0;
+        outline: 1px solid ${rgba(theme.colors.primary, 0.8)};
+      }
     }
 
     @media (min-width: 768px) {
