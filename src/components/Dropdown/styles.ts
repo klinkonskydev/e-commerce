@@ -28,6 +28,17 @@ export const Content = styled.menu`
     &::before {
       content: '';
       position: absolute;
+      top: -15px;
+      left: 0px;
+      right: 0px;
+
+      width: 100%;
+      height: 100%;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
       top: -10px;
       left: 20px;
 
@@ -55,7 +66,6 @@ export const Wrapper = styled.div<WrapperProps>`
   ${({ isOpen }) => css`
     position: relative;
     width: max-content;
-    padding-bottom: 7px;
 
     ${isOpen && wrapperModifiers.isOpen()}
   `}
