@@ -13,7 +13,8 @@ const customJestConfig = {
     '!src/**/stories.tsx',
     '!src/pages/*',
     '!src/types/*',
-    '!src/styles/**/*'
+    '!src/styles/**/*',
+    '!src/utils/**/*'
   ],
   moduleDirectories: ['node_modules', '<rootDir>/src'],
   testEnvironment: 'jest-environment-jsdom'
