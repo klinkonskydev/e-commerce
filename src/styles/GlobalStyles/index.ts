@@ -32,19 +32,18 @@ export default createGlobalStyle<GlobalStyleProps>`
     }
 
     a {
+      color: ${theme.colors.blue};
       text-decoration: none;
+
+      &:focus {
+        border: 0;
+        outline: 1px solid ${rgba(theme.colors.primary, 0.8)};
+      }
     }
 
     ul,
     ol {
       list-style: none;
-    }
-
-    a {
-      &:focus {
-        border: 0;
-        outline: 1px solid ${rgba(theme.colors.primary, 0.8)};
-      }
     }
 
     @media (min-width: 768px) {

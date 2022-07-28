@@ -33,7 +33,7 @@ export const Content = styled.menu`
       right: 0px;
 
       width: 100%;
-      height: 100%;
+      height: 2rem;
     }
 
     &::after {
