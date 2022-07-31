@@ -4,7 +4,8 @@ export default {
     blue: '#3966D0',
     black: '#282828',
     white: '#FFFFFF',
-    xwhite: '#EFEFEF'
+    xwhite: '#EFEFEF',
+    gray: '#8A8C90'
   },
   spacings: {
     small: '4px',
