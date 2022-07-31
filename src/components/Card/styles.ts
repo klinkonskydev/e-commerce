@@ -16,7 +16,7 @@ export const ImageWrapper = styled.div`
 export const Heading = styled.h3`
   ${({ theme }) => css`
     width: 33ch;
-    color: ${theme.colors.gray};
+    color: ${theme.colors.xgray};
     font: normal 400 1.4rem Roboto;
     text-transform: uppercase;
   `}

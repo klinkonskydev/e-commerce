@@ -9,7 +9,7 @@ describe('<Button />', () => {
 
     expect(screen.getByRole('button', { name: /sign-in/i })).toBeInTheDocument()
     expect(screen.getByRole('button', { name: /sign-in/i })).toHaveStyle({
-      background: theme.colors.primary,
+      background: theme.colors.gray,
       padding: `${theme.spacings.xsmall} ${theme.spacings.xhue}`
     })
   })
@@ -55,5 +55,14 @@ describe('<Button />', () => {
     )
 
     expect(screen.getByRole('link', { name: /back/i })).toBeInTheDocument()
+  })
+
+  it('should render the button checked', () => {
+    render(<Button checked>back</Button>)
+
+    expect(screen.getByRole('button', { name: /back/i })).toHaveStyle({
+      background: theme.colors.primary,
+      color: theme.colors.white
+    })
   })
 })

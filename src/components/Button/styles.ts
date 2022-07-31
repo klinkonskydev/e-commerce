@@ -23,18 +23,24 @@ const wrapperModifiers = {
     }
   `,
   contained: (theme: DefaultTheme) => css`
-    color: ${theme.colors.xwhite};
-    background: ${theme.colors.primary};
+    color: ${theme.colors.xblack};
+    background: ${theme.colors.gray};
   `,
   outlined: (theme: DefaultTheme) => css`
     color: ${theme.colors.primary};
     background: transparent;
     border: 2px solid ${theme.colors.primary};
+  `,
+  checked: (theme: DefaultTheme) => css`
+    color: ${theme.colors.white};
+    background: ${theme.colors.primary};
   `
 }
-export type WrapperProps = Pick<ButtonProps, 'size' | 'variant'>
+
+export type WrapperProps = Pick<ButtonProps, 'size' | 'variant' | 'checked'>
+
 export const Wrapper = styled.button<WrapperProps>`
-  ${({ theme, size, variant }) => css`
+  ${({ theme, size, variant, checked }) => css`
     outline: 0;
     border: 0;
 
@@ -53,5 +59,6 @@ export const Wrapper = styled.button<WrapperProps>`
 
     ${!!size && wrapperModifiers[size](theme)}
     ${!!variant && wrapperModifiers[variant](theme)}
+    ${!!checked && wrapperModifiers.checked(theme)}
   `}
 `

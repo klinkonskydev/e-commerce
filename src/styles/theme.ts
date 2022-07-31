@@ -3,9 +3,11 @@ export default {
     primary: '#EB6D47',
     blue: '#3966D0',
     black: '#282828',
+    xblack: '#404040',
     white: '#FFFFFF',
     xwhite: '#EFEFEF',
-    gray: '#8A8C90'
+    gray: '#F6F6F6',
+    xgray: '#8A8C90'
   },
   spacings: {
     small: '4px',

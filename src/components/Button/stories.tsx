@@ -20,6 +20,11 @@ export default {
         type: 'radio',
         options: ['transparent', 'contained', 'outlined']
       }
+    },
+    checked: {
+      control: {
+        type: 'boolean'
+      }
     }
   },
   args: {
