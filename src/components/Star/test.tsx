@@ -17,7 +17,8 @@ describe('<Star />', () => {
   it('should render the star checked', () => {
     render(<Star checked />)
 
-    expect(screen.getByTitle(/star/i).parentElement).toHaveStyle({
+    expect(screen.getByTitle(/star checked/i)).toBeInTheDocument()
+    expect(screen.getByTitle(/star checked/i).parentElement).toHaveStyle({
       fill: '#EB6D47',
       stroke: '#EB6D47'
     })
@@ -34,7 +35,7 @@ describe('<Star />', () => {
     userEvent.click(screen.getByTitle(/star/i))
 
     await waitFor(() => {
-      expect(screen.getByTitle(/star/i).parentElement).toHaveStyle({
+      expect(screen.getByTitle(/star checked/i).parentElement).toHaveStyle({
         fill: '#EB6D47',
         stroke: '#EB6D47'
       })
