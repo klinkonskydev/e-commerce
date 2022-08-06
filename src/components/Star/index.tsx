@@ -7,8 +7,7 @@ const Star = ({ checked = false }: StarProps) => {
   const [isChecked, setIsChecked] = useState(checked)
 
   const handleClick = () => {
-    const newValue = !isChecked
-    setIsChecked(newValue)
+    setIsChecked(true)
   }
 
   return (
