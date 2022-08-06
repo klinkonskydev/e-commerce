@@ -23,6 +23,14 @@ describe('<TextField />', () => {
     expect(screen.getByTestId(/search icon/i)).toBeInTheDocument()
   })
 
+  it('should render label', () => {
+    render(
+      <TextField name="Email" placeholder="email" label="Seu melhor email" />
+    )
+
+    expect(screen.getByText(/seu melhor email/i)).toBeInTheDocument()
+  })
+
   it('should type on input', async () => {
     const onInputChange = jest.fn()
     render(<TextField placeholder="Email" onInputChange={onInputChange} />)

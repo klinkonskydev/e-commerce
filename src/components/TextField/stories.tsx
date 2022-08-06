@@ -13,6 +13,10 @@ export default {
 
 export const Default: Story<TextFieldProps> = (args) => <TextField {...args} />
 
+export const WithLabel: Story<TextFieldProps> = (args) => (
+  <TextField name="Email" label="Seu melhor email" {...args} />
+)
+
 export const EndIcon: Story<TextFieldProps> = (args) => (
   <TextField
     {...args}

@@ -1,6 +1,19 @@
 import styled, { css } from 'styled-components'
 
 export const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+`
+
+export const Label = styled.label`
+  ${({ theme }) => css`
+    font-size: 1.4rem;
+    color: ${theme.colors.xgray};
+  `}
+`
+
+export const InputWrapper = styled.div`
   width: 100%;
   display: flex;
   align-items: center;
