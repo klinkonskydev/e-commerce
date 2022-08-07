@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components'
 
 export const Wrapper = styled.div`
   display: flex;
-  gap: 4px;
+  gap: 12px;
 `
 
 export const ArrowButton = styled.button`
@@ -14,8 +14,14 @@ export const ArrowButton = styled.button`
     border: 0;
     border-radius: 50px;
     background: none;
+    outline: 0;
 
     color: ${theme.colors.primary};
+
+    &:focus {
+      filter: drop-shadow(5px 0px 0 ${theme.colors.primary});
+    }
+
     &:disabled {
       cursor: not-allowed;
       color: ${theme.colors.xgray};
@@ -37,6 +43,10 @@ export const Button = styled.button`
       border-color: ${theme.colors.primary};
       color: ${theme.colors.primary};
       background: ${rgba(theme.colors.primary, 0.08)};
+    }
+
+    &:focus {
+      border-color: ${theme.colors.primary};
     }
   `}
 `
