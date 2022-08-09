@@ -27,7 +27,7 @@ const Pagination = ({ total, perPage, page }: PaginationProps) => {
   return (
     <S.Wrapper>
       <S.ArrowButton
-        disabled={!currencyPage}
+        disabled={currencyPage === 1}
         aria-label="Previous page"
         onClick={handlePrevPage}
       >
@@ -36,18 +36,25 @@ const Pagination = ({ total, perPage, page }: PaginationProps) => {
 
       {Array.from({ length: MAX_ITEMS })
         .map((_, index) => index + first)
-        .map((page) => (
-          <S.Button
-            key={page}
-            disabled={currencyPage + 1 === page}
-            onClick={() => onClick(page - 1)}
-          >
-            {page}
-          </S.Button>
-        ))}
+        .map((page) =>
+          page <= totalPages ? (
+            <S.Button
+              key={String(page)}
+              disabled={currencyPage === page}
+              onClick={() => onClick(page)}
+              type="button"
+            >
+              {page}
+            </S.Button>
+          ) : (
+            <S.Button type="button" key={String(page)}>
+              ...
+            </S.Button>
+          )
+        )}
 
       <S.ArrowButton
-        disabled={currencyPage === totalPages - 1}
+        disabled={currencyPage === totalPages}
         aria-label="Next page"
         onClick={handleNextPage}
       >
