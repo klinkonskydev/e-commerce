@@ -4,10 +4,12 @@ export default {
     blue: '#3966D0',
     black: '#282828',
     xblack: '#404040',
+    xxblack: '#434343',
     white: '#FFFFFF',
     xwhite: '#EFEFEF',
     gray: '#F6F6F6',
-    xgray: '#8A8C90'
+    xgray: '#8A8C90',
+    xxgray: '#C9CED8'
   },
   spacings: {
     small: '4px',
