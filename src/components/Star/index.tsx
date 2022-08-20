@@ -2,12 +2,13 @@ import { useState } from 'react'
 
 import * as S from './styles'
 
-export type StarProps = { checked?: boolean }
-const Star = ({ checked = false }: StarProps) => {
+export type StarProps = { checked?: boolean; disableClick?: boolean }
+
+const Star = ({ checked = false, disableClick = false }: StarProps) => {
   const [isChecked, setIsChecked] = useState(checked)
 
   const handleClick = () => {
-    setIsChecked(true)
+    !disableClick && setIsChecked(true)
   }
 
   return (

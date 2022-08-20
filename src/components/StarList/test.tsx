@@ -39,4 +39,11 @@ describe('<StarList />', () => {
       expect(screen.getAllByText(/star checked/i)).toHaveLength(4)
     })
   })
+
+  it('should not click', async () => {
+    render(<StarList rate={3} disableClick />)
+    expect(
+      screen.getAllByText(/star checked/i)[0].parentElement
+    ).toHaveAttribute('disabled')
+  })
 })

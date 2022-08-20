@@ -4,7 +4,7 @@ type RadioValue = string | ReadonlyArray<string> | number
 
 export type RadioProps = {
   onCheck?: (value?: RadioValue) => void
-  label?: string
+  label?: string | React.ReactNode
   labelFor?: string
   value?: RadioValue
 } & Omit<React.InputHTMLAttributes<HTMLInputElement>, 'type'>
